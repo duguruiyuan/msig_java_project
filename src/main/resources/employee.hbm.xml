@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="tw.com.msig.entity.Employee" table="employee">
+        <id name="id" column="id" type="long">
+            <generator class="identity" />
+        </id>
+        <property name="employeeId" column="employee_id" type="string"/>
+        <property name="name" column="Name" type="string"/>
+        <property name="departmentId" column="department_id" type="string"/>
+        <property name="email" column="Email" type="string"/>
+        <property name="phoneNumber" column="phone_number" type="string"/>
+        <property name="hireDate" column="hire_date" type="java.time.LocalDateTime"/>
+        <property name="jobId" column="job_id" type="string"/>
+        <property name="managerId" column="manager_Id" type="string"/>
+
+<!--         <set name="leaves" cascade="all"> -->
+<!--             <key column="employee_id" not-null="true"/> -->
+<!--             <one-to-many class="tw.com.msig.entity.Leave"/> -->
+<!--         </set> -->
+
+<!--         <set name="securitys" cascade="all"> -->
+<!--             <key column="employee_id" not-null="true"/> -->
+<!--             <one-to-many class="tw.com.msig.entity.Security"/> -->
+<!--         </set> -->
+                               
+    </class>
+</hibernate-mapping>
