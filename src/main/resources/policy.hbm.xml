@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="tw.com.msig.entity.Policy" table="my_policy_table">
+        <id name="id" column="id" type="long">
+            <generator class="identity" />
+        </id>
+        <property name="policyNo" column="policy_no" type="string" />
+        <property name="applicantName" column="applicant_name" type="string" />
+
+        <set name="items" cascade="all">
+            <key column="policy_id" not-null="true"/>
+            <one-to-many class="tw.com.msig.entity.Item"/>
+        </set>
+    </class>
+</hibernate-mapping>
