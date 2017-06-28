@@ -1,13 +1,27 @@
 package tw.com.msig;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 import tw.com.msig.entity.Policy;
 import tw.com.msig.service.PolicyService;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import java.util.List;
 
 /** @author Matt S.Y Ho */
-public class App {
+public class App implements WebApplicationInitializer {
+
+  @Override
+  public void onStartup(ServletContext servletContext) throws ServletException {
+    XmlWebApplicationContext context = new XmlWebApplicationContext();
+    context.setConfigLocations("classpath:spring-config.xml", "classpath:spring-service.xml", "classpath:spring-dao.xml");
+    context.setServletContext(servletContext);
+    context.refresh();
+    servletContext.addListener(new ContextLoaderListener(context));
+  }
 
   // ctrl + 1 : eclispe 建議視窗
   // 打 main 按 alt + /
