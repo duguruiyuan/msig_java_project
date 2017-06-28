@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="tw.com.msig.entity.Security" table="Security">
+        <id name="id" column="id" type="long">
+            <generator class="identity" />
+        </id>
+        <property name="Employee_id" column="employee_id" type="string"/>
+        <property name="Grouop" column="grouop" type="string"/>
+        <property name="Enabled" column="enabled" type="string"/>
+                
+    </class>
+</hibernate-mapping>
