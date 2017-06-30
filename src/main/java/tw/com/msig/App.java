@@ -6,7 +6,9 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import tw.com.msig.dao.PolicyDao;
+import tw.com.msig.entity.Employee;
 import tw.com.msig.entity.Policy;
+import tw.com.msig.service.EmployeeService;
 import tw.com.msig.service.PolicyService;
 
 import javax.servlet.ServletContext;
@@ -38,22 +40,31 @@ public class App implements WebApplicationInitializer {
         new ClassPathXmlApplicationContext(
             "spring-config.xml", "spring-service.xml", "spring-dao.xml");
     try {
-      PolicyService service = context.getBean(PolicyService.class);
-      PolicyDao dao = context.getBean(PolicyDao.class);
+//      PolicyService service = context.getBean(PolicyService.class);
+//      PolicyDao dao = context.getBean(PolicyDao.class);
+//      
+//      
+//      //增新的資料
+//      Policy policy = new Policy();
+//      policy.setApplicantName("tim");
+//      policy.setId(1);
+//      policy.setPolicyNo("1");
+//      service.save(policy);
       
-      
-      //增新的資料
-      Policy policy = new Policy();
-      policy.setApplicantName("tim");
-      policy.setId(1);
-      policy.setPolicyNo("1");
-      service.save(policy);
-      
-      
-      //查出剛剛存的資料
-      List<Policy> all = service.getAll();
-      all.forEach(System.out::println);
+    
+//    PolicyDao dao = context.getBean(PolicyDao.class);
+//      //查出剛剛存的資料
+//      List<Policy> all = service.getAll();
+//      all.forEach(System.out::println);
 
+      
+      EmployeeService sevice = context.getBean(EmployeeService.class);
+      Employee employee = new Employee();
+      employee.setName("tim");
+      sevice.save(employee);
+      
+      List<Employee> all = sevice.getAll();
+      all.forEach(System.out::println);
     } finally {
       context.close();
     }
