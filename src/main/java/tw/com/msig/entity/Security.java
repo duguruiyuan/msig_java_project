@@ -2,10 +2,10 @@ package tw.com.msig.entity;
 
 public class Security {
 	private long id;
-	  private String employeeId;
-	  private String group;
-	  private String enabled;
-	  
+	private String employeeId;
+	private String group;
+	private String enabled;
+
 	@Override
 	public String toString() {
 		return "Security [id=" + id + ", employeeId=" + employeeId + ", group=" + group + ", enabled=" + enabled + "]";
@@ -42,6 +42,5 @@ public class Security {
 	public void setEnabled(String enabled) {
 		this.enabled = enabled;
 	}
-	  
-	
+
 }
