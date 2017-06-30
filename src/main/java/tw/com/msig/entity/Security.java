@@ -2,14 +2,13 @@ package tw.com.msig.entity;
 
 public class Security {
 	private long id;
-	  private String Empoloyee_id;
-	  private String Group;
-	  private String Enabled;
+	  private String employeeId;
+	  private String group;
+	  private String enabled;
 	  
 	@Override
 	public String toString() {
-		return "Security [id=" + id + ", Empoloyee_id=" + Empoloyee_id + ", Group=" + Group + ", Enabled=" + Enabled
-				+ "]";
+		return "Security [id=" + id + ", employeeId=" + employeeId + ", group=" + group + ", enabled=" + enabled + "]";
 	}
 
 	public long getId() {
@@ -20,28 +19,29 @@ public class Security {
 		this.id = id;
 	}
 
-	public String getEmpoloyee_id() {
-		return Empoloyee_id;
+	public String getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setEmpoloyee_id(String empoloyee_id) {
-		Empoloyee_id = empoloyee_id;
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
 	}
 
 	public String getGroup() {
-		return Group;
+		return group;
 	}
 
 	public void setGroup(String group) {
-		Group = group;
+		this.group = group;
 	}
 
 	public String getEnabled() {
-		return Enabled;
+		return enabled;
 	}
 
 	public void setEnabled(String enabled) {
-		Enabled = enabled;
+		this.enabled = enabled;
 	}
 	  
+	
 }

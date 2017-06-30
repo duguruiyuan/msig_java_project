@@ -8,9 +8,9 @@
         <id name="id" column="id" type="long">
             <generator class="identity" />
         </id>
-        <property name="Employee_id" column="employee_id" type="string"/>
-        <property name="Grouop" column="grouop" type="string"/>
-        <property name="Enabled" column="enabled" type="string"/>
+        <property name="employeeId" column="employee_id" type="string"/>
+        <property name="group" column="group" type="string"/>
+        <property name="enabled" column="enabled" type="string"/>
                 
     </class>
 </hibernate-mapping>
