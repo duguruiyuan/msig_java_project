@@ -13,22 +13,25 @@ import java.util.List;
  */
 public class PolicyService {
 
-    @Autowired
-    private PolicyDao dao;
+  @Autowired
+  private PolicyDao dao;
 
-    public List<Policy> getAll() {
-        System.out.println("get all");
-        List<Policy> all = new ArrayList<>();
-        all.add(((PolicyService)AopContext.currentProxy()).generatePolicyNo("Matt"));
-        return all;
-    }
+  public List<Policy> getAll() {
+    System.out.println("get all");
+    List<Policy> all = new ArrayList<>();
+    all.add(((PolicyService) AopContext.currentProxy()).generatePolicyNo("Matt"));
+    return all;
+  }
 
-    public Policy generatePolicyNo(String applicantName) {
-        System.out.println("generatePolicyNo");
-        Policy policy = new Policy();
-        policy.setApplicantName(applicantName);
-        return policy;
-    }
+  public Policy generatePolicyNo(String applicantName) {
+    System.out.println("generatePolicyNo");
+    Policy policy = new Policy();
+    policy.setApplicantName(applicantName);
+    return policy;
+  }
 
+  public void save(Policy policy) {
+    dao.insert(policy);
+  }
 
 }

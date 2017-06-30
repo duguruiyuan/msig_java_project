@@ -4,6 +4,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
+
+import tw.com.msig.dao.PolicyDao;
 import tw.com.msig.entity.Policy;
 import tw.com.msig.service.PolicyService;
 
@@ -30,15 +32,27 @@ public class App implements WebApplicationInitializer {
   // ctrl + sfhit + t :  找 class
   // ctrl + sfhit + r :  找 resource
 
+  
   public static void main(String... args) {
     ClassPathXmlApplicationContext context =
         new ClassPathXmlApplicationContext(
             "spring-config.xml", "spring-service.xml", "spring-dao.xml");
     try {
       PolicyService service = context.getBean(PolicyService.class);
-
+      PolicyDao dao = context.getBean(PolicyDao.class);
+      
+      
+      //增新的資料
+      Policy policy = new Policy();
+      policy.setApplicantName("tim");
+      policy.setId(1);
+      policy.setPolicyNo("1");
+      service.save(policy);
+      
+      
+      //查出剛剛存的資料
       List<Policy> all = service.getAll();
-      System.out.println("initial policy: " + all);
+      all.forEach(System.out::println);
 
     } finally {
       context.close();
