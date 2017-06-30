@@ -20,7 +20,8 @@ public class PolicyService {
     System.out.println("get all");
     List<Policy> all = new ArrayList<>();
     all.add(((PolicyService) AopContext.currentProxy()).generatePolicyNo("Matt"));
-    return all;
+    
+    return dao.findAll();
   }
 
   public Policy generatePolicyNo(String applicantName) {
