@@ -1,11 +1,12 @@
 package tw.com.msig.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import tw.com.msig.entity.Policy;
 
-import java.util.List;
+import tw.com.msig.entity.Policy;
 
 /**
  * @author Matt S.Y Ho
