@@ -12,15 +12,23 @@ import tw.com.msig.entity.Employee;
  */
 public class EmployeeService {
 
-  @Autowired
-  private EmployeeDao dao;
+	@Autowired
+	private EmployeeDao dao;
 
-  public List<Employee> getAll() {
-    return dao.findAll();
-  }
+	public List<Employee> getAll() {
+		return dao.findAll();
+	}
 
-  public void save(Employee employee) {
-    dao.insert(employee);
-  }
+	public void save(Employee employee) {
+		dao.insert(employee);
+	}
+
+	public void update(Employee employee) {
+		dao.update(employee);
+	}
+
+	public void delete(Employee employee) {
+		dao.delete(employee);
+	}
 
 }

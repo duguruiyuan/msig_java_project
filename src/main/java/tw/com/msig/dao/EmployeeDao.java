@@ -27,7 +27,7 @@ public class EmployeeDao {
 	}
 
 	public void delete(Employee employee) {
-		factory.getCurrentSession().update(employee);
+		factory.getCurrentSession().delete(employee);
 	}
 
 }
