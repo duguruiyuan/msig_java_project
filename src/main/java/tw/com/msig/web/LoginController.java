@@ -15,7 +15,7 @@ public class LoginController extends AbstractController {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		toJsp(req, resp, "login");
+		forward(req, resp, "login");
 	}
 
 	@Override

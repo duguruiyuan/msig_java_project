@@ -13,6 +13,7 @@ public class IndexController extends AbstractController {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		// 檢查是否有登入
 		if (SecurityUtils.requireLogin(req, resp)) {
 
@@ -22,7 +23,7 @@ public class IndexController extends AbstractController {
 			// 存在session內的參數會一直活著, jsp也拿得到所以不用特別塞
 
 			// 轉導到jsp上
-			toJsp(req, resp, "index");
+			forward(req, resp, "index");
 		}
 
 	}
