@@ -8,4 +8,5 @@
 
 	<bean id="policyDao" class="tw.com.msig.dao.PolicyDao" />
 	<bean id="employeeDao" class="tw.com.msig.dao.EmployeeDao" />
+	<bean id="securityDao" class="tw.com.msig.dao.SecurityDao" />
 </beans>

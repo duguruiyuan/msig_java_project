@@ -5,11 +5,8 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
-import tw.com.msig.dao.PolicyDao;
-import tw.com.msig.entity.Employee;
-import tw.com.msig.entity.Policy;
-import tw.com.msig.service.EmployeeService;
-import tw.com.msig.service.PolicyService;
+import tw.com.msig.entity.Security;
+import tw.com.msig.service.SecurityService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -58,12 +55,17 @@ public class App implements WebApplicationInitializer {
 //      all.forEach(System.out::println);
 
       
-      EmployeeService sevice = context.getBean(EmployeeService.class);
-      Employee employee = new Employee();
-      employee.setName("tim");
-      sevice.save(employee);
+//      EmployeeService sevice = context.getBean(EmployeeService.class);
+//      Employee employee = new Employee();
+//      employee.setName("tim");
+//      sevice.save(employee);
+    
+      SecurityService sevice = context.getBean(SecurityService.class);
+      Security security = new Security();
+      security.setGroup("top");
+      sevice.save(security);
       
-      List<Employee> all = sevice.getAll();
+      List<Security> all = sevice.getAll();
       all.forEach(System.out::println);
     } finally {
       context.close();
