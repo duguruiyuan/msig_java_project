@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="tw.com.msig.entity.leave" table="leave">
+
+		<id name="id" column="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="employlee_id" column="employlee_id" type="string" />
+		<property name="leave_type" column="leave_type" type="string" />
+		<property name="start_time" column="start_time" type="java.time.LocalDateTime" />
+		<property name="end_time" column="end_time" type="java.time.LocalDateTime" />
+		<property name="agent" column="agent" type="string" />
+		<property name="approve_time" column="approve_time"
+			type="java.time.LocalDateTime" />
+		<property name="key_time" column="key_time" type="java.time.LocalDateTime" />
+		<property name="user_cancel_flag" column="user_cancel_flag"
+			type="string" />
+		<property name="manager_approve_flag" column="manager_approve_flag"
+			type="string" />
+	</class>
+</hibernate-mapping>

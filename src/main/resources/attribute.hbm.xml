@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="tw.com.msig.entity.Attribute" table="attribute">
+		<id name="id" column="id" type="long">
+			<generator class="identity" />
+		</id>
+
+		<property name="att_type" column="att_type" type="string" />
+		<property name="att_value" column="att_value" type="string" />
+		<property name="att_comm" column="att_comm" type="string" />
+
+	</class>
+</hibernate-mapping>
