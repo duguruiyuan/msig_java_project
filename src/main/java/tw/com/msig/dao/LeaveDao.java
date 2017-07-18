@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import tw.com.msig.entity.Leave;
+import tw.com.msig.entity.Policy;
+import tw.com.msig.entity.Security;
 
 public class LeaveDao {
 
@@ -29,4 +31,8 @@ public class LeaveDao {
 		factory.getCurrentSession().delete(leave);
 	}
 
+	public Policy findOne(String id) {
+		Session session = factory.getCurrentSession();
+		return (Policy) session.get(Security.class, id);
+	}
 }

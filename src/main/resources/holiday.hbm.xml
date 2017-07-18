@@ -6,7 +6,7 @@
 <hibernate-mapping>
     <class name="tw.com.msig.entity.Holiday" table="holiday">
         <id name="id" column="id" type="long">
-            <generator class="identity" />
+            <generator class="sequence" />
         </id>
         <property name="date" column="date" type="org.hibernate.type.LocalDateTimeType"/>
         <property name="note" column="note" type="string"/>

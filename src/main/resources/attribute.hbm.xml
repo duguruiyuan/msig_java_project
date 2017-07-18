@@ -6,7 +6,7 @@
 <hibernate-mapping>
 	<class name="tw.com.msig.entity.Attribute" table="attribute">
 		<id name="id" column="id" type="long">
-			<generator class="identity" />
+			<generator class="sequence" />
 		</id>
 
 		<property name="att_type" column="att_type" type="string" />

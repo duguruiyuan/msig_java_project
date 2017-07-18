@@ -6,7 +6,7 @@
 <hibernate-mapping>
     <class name="tw.com.msig.entity.Policy" table="my_policy_table">
         <id name="id" column="id" type="long">
-            <generator class="identity" />
+            <generator class="sequence" />
         </id>
         <property name="policyNo" column="policy_no" type="string" />
         <property name="applicantName" column="applicant_name" type="string" />

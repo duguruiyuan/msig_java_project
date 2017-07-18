@@ -10,7 +10,7 @@
 	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
-		<property name="username" value="1234"/>
+		<property name="username" value="system"/>
 		<property name="password" value="1234"/>
 	</bean>
 
@@ -23,7 +23,7 @@
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop>
-				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
 			</props>
 		</property>
 		<property name="dataSource" ref="dataSource"/>

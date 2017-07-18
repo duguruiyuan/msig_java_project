@@ -7,7 +7,7 @@
 	<class name="tw.com.msig.entity.Leave" table="leave">
 
 		<id name="id" column="id" type="long">
-			<generator class="identity" />
+			<generator class="sequence" />
 		</id>
 		<property name="employlee_id" column="employlee_id" type="string" />
 		<property name="leave_type" column="leave_type" type="string" />

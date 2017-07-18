@@ -6,7 +6,7 @@
 <hibernate-mapping>
     <class name="tw.com.msig.entity.Security" table="my_security">
         <id name="id" column="id" type="long">
-            <generator class="identity" />
+            <generator class="sequence" />
         </id>
         <property name="employeeId" column="employee_id" type="string"/>
         <property name="group" column="`group`" type="string"/>
