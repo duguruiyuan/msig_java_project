@@ -21,7 +21,7 @@ public class PolicyDao {
 
   public List<Policy> findAll() {
     Session session = factory.getCurrentSession();
-    return (List<Policy>) session.createQuery("from my_policy").list();
+    return (List<Policy>) session.createQuery("from Policy").list();
   }
 
   public void insert(Policy policy) {

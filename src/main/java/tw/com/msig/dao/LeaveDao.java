@@ -13,7 +13,7 @@ public class LeaveDao {
 
 	public List<Leave> findAll() {
 		Session session = factory.getCurrentSession();
-		return (List<Leave>) session.createQuery("from my_leave").list();
+		return (List<Leave>) session.createQuery("from Leave").list();
 	}
 
 	public void insert(Leave leave) {

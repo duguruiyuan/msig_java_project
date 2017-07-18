@@ -18,7 +18,7 @@ public class SecurityDao {
 
   public List<Security> findAll() {
     Session session = factory.getCurrentSession();
-    return (List<Security>) session.createQuery("from my_security").list();
+    return (List<Security>) session.createQuery("from Security").list();
   }
 
   public void insert(Security security) {
