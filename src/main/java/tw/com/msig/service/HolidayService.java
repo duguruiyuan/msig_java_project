@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import tw.com.msig.dao.HolidayDao;
+import tw.com.msig.entity.Employee;
 import tw.com.msig.entity.Holiday;
 
 /**
@@ -31,4 +32,7 @@ public class HolidayService {
 		dao.delete(holiday);
 	}
 
+	public Holiday getOne(String id) {
+		return dao.findOne(id);
+	}
 }

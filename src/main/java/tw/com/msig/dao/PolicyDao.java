@@ -28,6 +28,11 @@ public class PolicyDao {
     factory.getCurrentSession().save(policy);
   }
 
+  public void delete(Policy policy) {
+	    factory.getCurrentSession().delete(policy);
+	  }
+
+  
   public void update(Policy policy) {
     factory.getCurrentSession().update(policy);
   }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import tw.com.msig.dao.SecurityDao;
+import tw.com.msig.entity.Policy;
 import tw.com.msig.entity.Security;
 
 /**
@@ -19,8 +20,19 @@ public class SecurityService {
 		return dao.findAll();
 	}
 
-	public void save(Security Security) {
-		dao.insert(Security);
+	public void save(Security security) {
+		dao.insert(security);
 	}
 
+	public void update(Security security) {
+		dao.update(security);
+	}
+
+	public void delete(Security security) {
+		dao.delete(security);
+	}
+
+	public Security getOne(String id) {
+		return dao.findOne(id);
+	}
 }

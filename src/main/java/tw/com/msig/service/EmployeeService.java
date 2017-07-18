@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import tw.com.msig.dao.EmployeeDao;
 import tw.com.msig.entity.Employee;
+import tw.com.msig.entity.Leave;
 
 /**
  * @author Matt S.Y Ho
@@ -31,4 +32,7 @@ public class EmployeeService {
 		dao.delete(employee);
 	}
 
+	public Employee getOne(String id) {
+		return dao.findOne(id);
+	}
 }
