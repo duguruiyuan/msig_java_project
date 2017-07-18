@@ -15,10 +15,8 @@
 	</bean>
 
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="mappingDirectoryLocations"> <!-- Spring掃描 mapping 檔案的目錄 -->
-			<list>
-				<value>classpath:</value>
-			</list>
+		<property name="mappingLocations">
+			<value>classpath*:*.hbm.xml</value> <!-- Spring 掃描 mapping 檔  -->
 		</property>
 		<property name="hibernateProperties"> <!--設定 hibernate -->
 			<props>
