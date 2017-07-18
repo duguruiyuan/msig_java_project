@@ -8,7 +8,8 @@
         <id name="id" column="id" type="long">
             <generator class="sequence" />
         </id>
-        <property name="employeeId" column="employee_id" type="string"/>
+        <property name="employeeId" column="employee_id" type="string"
+	insert="false" update="false"/>
         <property name="group" column="`group`" type="string"/>
         <property name="enabled" column="enabled" type="string"/>
                 

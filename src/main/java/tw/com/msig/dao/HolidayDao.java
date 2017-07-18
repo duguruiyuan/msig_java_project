@@ -15,7 +15,7 @@ public class HolidayDao {
 
   public List<Holiday> findAll() {
     Session session = factory.getCurrentSession();
-    return (List<Holiday>) session.createQuery("from my_Holiday").list();
+    return (List<Holiday>) session.createQuery("from my_holiday").list();
   }
 
   public void insert(Holiday holiday) {
