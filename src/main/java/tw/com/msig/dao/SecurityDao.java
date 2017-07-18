@@ -10,24 +10,24 @@ import tw.com.msig.entity.Security;
 
 public class SecurityDao {
 
-	@Autowired
-	private SessionFactory factory;
+  @Autowired
+  private SessionFactory factory;
 
-	public List<Security> findAll() {
-		Session session = factory.getCurrentSession();
-		return (List<Security>) session.createQuery("from Security").list();
-	}
+  public List<Security> findAll() {
+    Session session = factory.getCurrentSession();
+    return (List<Security>) session.createQuery("from Security").list();
+  }
 
-	public void insert(Security security) {
-		factory.getCurrentSession().save(security);
-	}
+  public void insert(Security security) {
+    factory.getCurrentSession().save(security);
+  }
 
-	public void update(Security Security) {
-		factory.getCurrentSession().update(Security);
-	}
+  public void update(Security Security) {
+    factory.getCurrentSession().update(Security);
+  }
 
-	public void delete(Security Security) {
-		factory.getCurrentSession().update(Security);
-	}
+  public void delete(Security Security) {
+    factory.getCurrentSession().update(Security);
+  }
 
 }

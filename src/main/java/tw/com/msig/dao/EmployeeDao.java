@@ -10,24 +10,24 @@ import java.util.List;
 
 public class EmployeeDao {
 
-	@Autowired
-	private SessionFactory factory;
+  @Autowired
+  private SessionFactory factory;
 
-	public List<Employee> findAll() {
-		Session session = factory.getCurrentSession();
-		return (List<Employee>) session.createQuery("from Employee").list();
-	}
+  public List<Employee> findAll() {
+    Session session = factory.getCurrentSession();
+    return (List<Employee>) session.createQuery("from Employee").list();
+  }
 
-	public void insert(Employee employee) {
-		factory.getCurrentSession().save(employee);
-	}
+  public void insert(Employee employee) {
+    factory.getCurrentSession().save(employee);
+  }
 
-	public void update(Employee employee) {
-		factory.getCurrentSession().update(employee);
-	}
+  public void update(Employee employee) {
+    factory.getCurrentSession().update(employee);
+  }
 
-	public void delete(Employee employee) {
-		factory.getCurrentSession().delete(employee);
-	}
+  public void delete(Employee employee) {
+    factory.getCurrentSession().update(employee);
+  }
 
 }
