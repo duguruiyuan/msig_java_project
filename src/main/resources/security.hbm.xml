@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <property name="employeeId" column="employee_id" type="string"/>
-        <property name="group" column="group" type="string"/>
+        <property name="group" column="`group`" type="string"/>
         <property name="enabled" column="enabled" type="string"/>
                 
     </class>

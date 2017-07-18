@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,7 +14,7 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import tw.com.msig.entity.Policy;
 import tw.com.msig.service.PolicyService;
-
+@Transactional
 public class EmployeeDaoTest implements WebApplicationInitializer {
 
   @Override
