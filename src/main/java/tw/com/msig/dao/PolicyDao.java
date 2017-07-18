@@ -46,7 +46,7 @@ public class PolicyDao {
 
   public Policy findOne(String id) {
     Session session = factory.getCurrentSession();
-    return (Policy) session.get(Security.class, id);
+    return (Policy) session.get(Policy.class, id);
   }
 
 }
