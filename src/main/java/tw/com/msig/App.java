@@ -5,11 +5,15 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
+import tw.com.msig.entity.Employee;
 import tw.com.msig.entity.Security;
+import tw.com.msig.service.EmployeeService;
 import tw.com.msig.service.SecurityService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 /** @author Matt S.Y Ho */
@@ -60,13 +64,19 @@ public class App implements WebApplicationInitializer {
 //      employee.setName("tim");
 //      sevice.save(employee);
     
-      SecurityService sevice = context.getBean(SecurityService.class);
-      Security security = new Security();
-      security.setGroup("top");
-      sevice.save(security);
+      EmployeeService service = context.getBean(EmployeeService.class);
+//      Security security = new Security();
+//      security.setGroup("top");
+//      sevice.save(security);
+      Employee emp = new Employee();
+      emp.setHireDate(LocalDateTime.now());
       
-      List<Security> all = sevice.getAll();
-      all.forEach(System.out::println);
+      
+//      List<Security> all = sevice.getAll();
+//      all.forEach(System.out::println);
+      service.save(emp);
+      
+      service.getAll().forEach(System.out::println);
     } finally {
       context.close();
     }

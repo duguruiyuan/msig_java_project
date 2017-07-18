@@ -7,12 +7,13 @@ import javax.servlet.ServletException;
 
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import tw.com.msig.entity.Policy;
-
+@Transactional
 public class PolicyDaoTest implements WebApplicationInitializer {
 
   @Test

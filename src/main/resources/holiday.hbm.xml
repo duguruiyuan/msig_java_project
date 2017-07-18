@@ -4,13 +4,11 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="tw.com.msig.entity.Security" table="my_security">
+    <class name="tw.com.msig.entity.Holiday" table="holiday">
         <id name="id" column="id" type="long">
             <generator class="identity" />
         </id>
-        <property name="employeeId" column="employee_id" type="string"/>
-        <property name="group" column="`group`" type="string"/>
-        <property name="enabled" column="enabled" type="string"/>
-                
+        <property name="date" column="date" type="org.hibernate.type.LocalDateTimeType"/>
+        <property name="note" column="note" type="string"/>
     </class>
 </hibernate-mapping>

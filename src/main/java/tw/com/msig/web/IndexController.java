@@ -1,5 +1,6 @@
 package tw.com.msig.web;
 
+import tw.com.msig.service.PolicyService;
 import tw.com.msig.util.SecurityUtils;
 
 import javax.servlet.ServletException;
@@ -13,7 +14,6 @@ public class IndexController extends AbstractController {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		// 檢查是否有登入
 		if (SecurityUtils.requireLogin(req, resp)) {
 

@@ -13,7 +13,7 @@
         <property name="departmentId" column="department_id" type="string"/>
         <property name="email" column="Email" type="string"/>
         <property name="phoneNumber" column="phone_number" type="string"/>
-        <property name="hireDate" column="hire_date" type="java.time.LocalDateTime"/>
+        <property name="hireDate" column="hire_date" type="org.hibernate.type.LocalDateTimeType"/>
         <property name="jobId" column="job_id" type="string"/>
         <property name="managerId" column="manager_Id" type="string"/>
 
