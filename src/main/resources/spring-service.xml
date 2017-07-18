@@ -12,4 +12,5 @@
 	<bean id="employeeService" class="tw.com.msig.service.EmployeeService" />
 	<bean id="securityService" class="tw.com.msig.service.SecurityService" />
 	<bean id="leaveService" class="tw.com.msig.service.LeaveService" />
+	<bean id="attributeService" class="tw.com.msig.service.AttributeService" />
 </beans>

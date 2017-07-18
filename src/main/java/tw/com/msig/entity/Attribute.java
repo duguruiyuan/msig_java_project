@@ -1,37 +1,42 @@
 package tw.com.msig.entity;
 
 public class Attribute {
-	
+
 	private long id;
-	private String att_type;
-	private String att_value;
-	private String att_comm;
-	
+	private String attType;// "leaveType"
+	private String attValue;
+	private String attComm;
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getAtt_type() {
-		return att_type;
+
+	public String getattType() {
+		return attType;
 	}
-	public void setAtt_type(String att_type) {
-		this.att_type = att_type;
+
+	public void setattType(String attType) {
+		this.attType = attType;
 	}
-	public String getAtt_value() {
-		return att_value;
+
+	public String getattValue() {
+		return attValue;
 	}
-	public void setAtt_value(String att_value) {
-		this.att_value = att_value;
+
+	public void setattValue(String attValue) {
+		this.attValue = attValue;
 	}
-	public String getAtt_comm() {
-		return att_comm;
+
+	public String getattComm() {
+		return attComm;
 	}
-	public void setAtt_comm(String att_comm) {
-		this.att_comm = att_comm;
+
+	public void setattComm(String attComm) {
+		this.attComm = attComm;
 	}
-	
-	
 
 }

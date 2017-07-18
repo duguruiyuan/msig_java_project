@@ -9,9 +9,9 @@
 			<generator class="sequence" />
 		</id>
 
-		<property name="att_type" column="att_type" type="string" />
-		<property name="att_value" column="att_value" type="string" />
-		<property name="att_comm" column="att_comm" type="string" />
+		<property name="attType" column="att_type" type="string" />
+		<property name="attValue" column="att_value" type="string" />
+		<property name="attComm" column="att_comm" type="string" />
 
 	</class>
 </hibernate-mapping>
