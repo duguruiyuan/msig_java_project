@@ -4,11 +4,8 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import tw.com.msig.entity.Leave;
-import tw.com.msig.entity.Policy;
-import tw.com.msig.entity.Security;
 
 public class LeaveDao {
 
@@ -16,7 +13,7 @@ public class LeaveDao {
 
 	public List<Leave> findAll() {
 		Session session = factory.getCurrentSession();
-		return (List<Leave>) session.createQuery("from Leave").list();
+		return (List<Leave>) session.createQuery("from my_Leave").list();
 	}
 
 	public void insert(Leave leave) {
@@ -31,8 +28,8 @@ public class LeaveDao {
 		factory.getCurrentSession().delete(leave);
 	}
 
-	public Policy findOne(String id) {
+	public Leave findOne(String id) {
 		Session session = factory.getCurrentSession();
-		return (Policy) session.get(Security.class, id);
+		return (Leave) session.get(Leave.class, id);
 	}
 }

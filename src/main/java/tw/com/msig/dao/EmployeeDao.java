@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import tw.com.msig.entity.Employee;
+import tw.com.msig.entity.Leave;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class EmployeeDao {
 
   public List<Employee> findAll() {
     Session session = factory.getCurrentSession();
-    return (List<Employee>) session.createQuery("from Employee").list();
+    return (List<Employee>) session.createQuery("from my_Employee").list();
   }
 
   public void insert(Employee employee) {
@@ -29,5 +30,8 @@ public class EmployeeDao {
   public void delete(Employee employee) {
     factory.getCurrentSession().update(employee);
   }
-
+  public Employee findOne(String id) {
+		Session session = factory.getCurrentSession();
+		return (Employee) session.get(Employee.class, id);
+	}
 }
