@@ -6,12 +6,17 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.core.ResolvableType;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 
 /** 共用的controller邏輯 */
 public abstract class AbstractController extends HttpServlet implements BeanFactory {
@@ -21,6 +26,17 @@ public abstract class AbstractController extends HttpServlet implements BeanFact
       throws ServletException, IOException {
     RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/" + path + ".jsp");
     dispatcher.forward(req, resp);
+  }
+
+  protected void writeJson(HttpServletResponse response, Object src) {
+    String json = new Gson().toJson(src);
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    try {
+      response.getWriter().write(json);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
   }
 
   private BeanFactory getBeanFactory() {
