@@ -11,5 +11,9 @@ addons:
     packages:
       - oracle-java8-installer
 
+env:
+	global:
+		- spring.profiles.active=h2
+
 # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
 script: travis_wait 360 mvn -B test -U -e
