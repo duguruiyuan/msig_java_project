@@ -5,8 +5,11 @@ import java.time.LocalDateTime;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ConfigurableWebEnvironment;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
@@ -34,8 +37,10 @@ public class App implements WebApplicationInitializer {
 	// ctrl + sfhit + r : 找 resource
 
 	public static void main(String... args) {
+	 // System.setProperty("spring.profiles.active", "h2");
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml",
 				"spring-service.xml", "spring-dao.xml");
+		
 		try {
 			// PolicyService service = context.getBean(PolicyService.class);
 			// PolicyDao dao = context.getBean(PolicyDao.class);
@@ -58,19 +63,19 @@ public class App implements WebApplicationInitializer {
 			// employee.setName("tim");
 			// sevice.save(employee);
 			//
-			// EmployeeService service = context.getBean(EmployeeService.class);
-			// // Security security = new Security();
-			// // security.setGroup("top");
-			// // sevice.save(security);
-			// Employee emp = new Employee();
-			// emp.setHireDate(LocalDateTime.now());
-			//
-			//
-			// // List<Security> all = sevice.getAll();
-			// // all.forEach(System.out::println);
-			// service.save(emp);
-			//
-			// service.getAll().forEach(System.out::println);
+			 EmployeeService service = context.getBean(EmployeeService.class);
+			 // Security security = new Security();
+			 // security.setGroup("top");
+			 // sevice.save(security);
+			 Employee emp = new Employee();
+			 emp.setHireDate(LocalDateTime.now());
+			
+			
+			 // List<Security> all = sevice.getAll();
+			 // all.forEach(System.out::println);
+			 service.save(emp);
+			
+			 service.getAll().forEach(System.out::println);
 		} finally {
 			context.close();
 		}

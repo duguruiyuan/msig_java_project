@@ -16,7 +16,7 @@ public class EmployeeDao {
 
 	public List<Employee> findAll() {
 		Session session = factory.getCurrentSession();
-		return (List<Employee>) session.createQuery("from employee").list();
+		return (List<Employee>) session.createQuery("from Employee").list();
 	}
 
 	public void insert(Employee employee) {
