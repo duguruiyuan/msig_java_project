@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="tw.com.msig.entity.Attribute" table="attribute">
+	<class name="tw.com.msig.entity.Attribute" table="my_attribute">
 		<id name="id" column="id" type="long">
 			<generator class="sequence" />
 		</id>
