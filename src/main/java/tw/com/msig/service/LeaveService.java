@@ -12,27 +12,31 @@ import tw.com.msig.entity.Leave;
  */
 public class LeaveService {
 
-	@Autowired
-	private LeaveDao dao;
+  @Autowired
+  private LeaveDao dao;
 
-	public List<Leave> getAll() {
-		return dao.findAll();
-	}
+  static {
+  }
 
-	public void save(Leave leave) {
-		dao.insert(leave);
-	}
+  public List<Leave> getAll() {
+    dao.findAll();
+    return dao.findAll();
+  }
 
-	public void update(Leave leave) {
-		dao.update(leave);
-	}
+  public void save(Leave leave) {
+    dao.insert(leave);
+  }
 
-	public void delete(Leave leave) {
-		dao.delete(leave);
-	}
+  public void update(Leave leave) {
+    dao.update(leave);
+  }
 
-	public Leave getOne(String id) {
-		return dao.findOne(id);
-	}
+  public void delete(Leave leave) {
+    dao.delete(leave);
+  }
+
+  public Leave getOne(String id) {
+    return dao.findOne(id);
+  }
 
 }

@@ -12,30 +12,32 @@ import tw.com.msig.entity.Attribute;
  */
 public class AttributeService {
 
-	@Autowired
-	private AttributeDao dao;
+  @Autowired
+  private AttributeDao dao;
 
-	public List<Attribute> getAll() {
-		return dao.findAll();
-	}
+  public List<Attribute> getAll() {
+    return dao.findAll();
+  }
 
-	public void save(Attribute attribute) {
-		dao.insert(attribute);
-	}
+  public void save(Attribute attribute) {
+    dao.insert(attribute);
+  }
 
-	public void update(Attribute attribute) {
-		dao.update(attribute);
-	}
+  public void update(Attribute attribute) {
+    dao.update(attribute);
+  }
 
-	public void delete(Attribute attribute) {
-		dao.delete(attribute);
-	}
+  public void delete(Attribute attribute) {
+    dao.delete(attribute);
+  }
 
-	public Attribute getOne(String id) {
-		return dao.findOne(id);
-	}
+  public Attribute getOne(String id) {
+    return dao.findOne(id);
+  }
 
-	public List<Attribute> getByAttType(String attType) {
-		return dao.findByAttType(attType);
-	}
+  public List<Attribute> getByAttType(String attType) {
+    return dao.findByAttType(attType);
+  }
+
+
 }

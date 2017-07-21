@@ -14,14 +14,16 @@ import tw.com.msig.service.AttributeService;
 @WebServlet("/leave/types")
 public class LeaveTypeController extends AbstractController {
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		AttributeService attributeService = getBean(AttributeService.class);
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+      throws ServletException, IOException {
 
-		List<Attribute> types = attributeService.getByAttType("leaveType");
-		
-		req.setAttribute("leaveTypes", types);
-	}
+    AttributeService attributeService = getBean(AttributeService.class);
+
+    List<Attribute> types = attributeService.getByAttType("leaveType");
+
+    req.setAttribute("leaveTypes", types);
+
+  }
 
 }

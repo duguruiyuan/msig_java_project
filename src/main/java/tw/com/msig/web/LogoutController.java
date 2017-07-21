@@ -1,5 +1,6 @@
 package tw.com.msig.web;
 
+import tw.com.msig.service.AttributeService;
 import tw.com.msig.util.SecurityUtils;
 
 import javax.servlet.ServletException;
@@ -19,8 +20,9 @@ public class LogoutController extends AbstractController {
 		if (session != null) {
 			req.getSession().invalidate();
 		}
-
-		// 彈回登入畫面
+		
+        
+        // 彈回登入畫面
 		SecurityUtils.requireLogin(req, resp);
 	}
 }
