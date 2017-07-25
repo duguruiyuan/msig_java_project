@@ -15,14 +15,7 @@ public class LogoutController extends AbstractController {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 取得登入者的Session並廢除
-		final HttpSession session = req.getSession(false); // 若沒有session, 則回傳null
-		if (session != null) {
-			req.getSession().invalidate();
-		}
-		
-        
-        // 彈回登入畫面
-		SecurityUtils.requireLogin(req, resp);
+	  SecurityUtils.removeUser(req);
+	  forward(req, resp, "login");
 	}
 }

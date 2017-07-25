@@ -14,8 +14,11 @@ public class Employee {
 	private LocalDateTime hireDate;
 	private String jobId;
 	private String managerId;
+	private String password;
 
-	private Set<Item> securitys;
+	
+
+  private Set<Item> securitys;
 	private Set<Item> leaves;
 
 	@Override
@@ -112,5 +115,13 @@ public class Employee {
 	public void setLeaves(Set<Item> leaves) {
 		this.leaves = leaves;
 	}
+	
+	public String getPassword() {
+	    return password;
+	  }
+
+	  public void setPassword(String password) {
+	    this.password = password;
+	  }
 
 }
