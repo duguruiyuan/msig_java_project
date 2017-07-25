@@ -34,7 +34,7 @@ public class AttributeDao {
 		factory.getCurrentSession().update(attribute);
 	}
 
-	public Attribute findOne(String id) {
+	public Attribute findOne(long id) {
 		Session session = factory.getCurrentSession();
 		return (Attribute) session.get(Attribute.class, id);
 	}

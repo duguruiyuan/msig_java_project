@@ -33,7 +33,7 @@ public class SecurityDao {
     factory.getCurrentSession().update(Security);
   }
     
-  public Security findOne(String id) {
+  public Security findOne(long id) {
     Session session = factory.getCurrentSession();
     return (Security) session.get(Security.class, id);
   }

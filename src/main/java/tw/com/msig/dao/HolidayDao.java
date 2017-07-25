@@ -30,7 +30,7 @@ public class HolidayDao {
     factory.getCurrentSession().update(holiday);
   }
     
-  public Holiday findOne(String id) {
+  public Holiday findOne(long id) {
     Session session = factory.getCurrentSession();
     return (Holiday) session.get(Holiday.class, id);
   }

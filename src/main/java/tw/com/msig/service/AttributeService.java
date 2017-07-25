@@ -31,7 +31,7 @@ public class AttributeService {
     dao.delete(attribute);
   }
 
-  public Attribute getOne(String id) {
+  public Attribute getOne(long id) {
     return dao.findOne(id);
   }
 

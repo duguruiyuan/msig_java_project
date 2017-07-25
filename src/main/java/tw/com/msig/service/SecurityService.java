@@ -32,7 +32,7 @@ public class SecurityService {
 		dao.delete(security);
 	}
 
-	public Security getOne(String id) {
+	public Security getOne(long id) {
 		return dao.findOne(id);
 	}
 }

@@ -35,7 +35,7 @@ public class LeaveService {
     dao.delete(leave);
   }
 
-  public Leave getOne(String id) {
+  public Leave getOne(long id) {
     return dao.findOne(id);
   }
 

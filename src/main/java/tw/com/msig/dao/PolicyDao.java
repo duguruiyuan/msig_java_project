@@ -49,7 +49,7 @@ public class PolicyDao {
     return crti.list();
   }
 
-  public Policy findOne(String id) {
+  public Policy findOne(long id) {
     Session session = factory.getCurrentSession();
     return (Policy) session.get(Policy.class, id);
   }

@@ -28,7 +28,7 @@ public class LeaveDao {
 		factory.getCurrentSession().delete(leave);
 	}
 
-	public Leave findOne(String id) {
+	public Leave findOne(long id) {
 		Session session = factory.getCurrentSession();
 		return (Leave) session.get(Leave.class, id);
 	}

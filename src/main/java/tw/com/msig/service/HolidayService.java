@@ -32,7 +32,7 @@ public class HolidayService {
 		dao.delete(holiday);
 	}
 
-	public Holiday getOne(String id) {
+	public Holiday getOne(long id) {
 		return dao.findOne(id);
 	}
 }

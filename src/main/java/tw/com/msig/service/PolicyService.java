@@ -32,7 +32,7 @@ public class PolicyService {
 		dao.delete(policy);
 	}
 
-	public Policy getOne(String id) {
+	public Policy getOne(long id) {
 		return dao.findOne(id);
 	}
 }
