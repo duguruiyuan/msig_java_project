@@ -11,6 +11,9 @@ import tw.com.msig.entity.Employee;
 import tw.com.msig.service.EmployeeService;
 import tw.com.msig.util.SecurityUtils;
 
+/**
+ * 
+ */
 @WebServlet("/my_page")
 public class MyPageController extends AbstractController{
 

@@ -8,10 +8,10 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
 	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
-		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
-		<property name="username" value="system"/>
-		<property name="password" value="1234"/>
+		<property name="driverClassName" value="org.h2.Driver"/>
+		<property name="url" value="jdbc:h2:mem:msig"/>
+		<property name="username" value=""/>
+		<property name="password" value=""/>
 	</bean>
 
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -49,12 +49,12 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePackage"/>
 	</aop:config>
 
-	<beans profile="h2">
-		<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" primary="true">
-			<property name="driverClassName" value="org.h2.Driver"/>
-			<property name="url" value="jdbc:h2:mem:msig"/>
-			<property name="username" value=""/>
-			<property name="password" value=""/>
+	<beans profile="postgresql">
+		<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
+			<property name="driverClassName" value="org.postgresql.Driver"/>
+			<property name="url" value="..."/>
+			<property name="username" value="..."/>
+			<property name="password" value="..."/>
 		</bean>
 	</beans>
 
