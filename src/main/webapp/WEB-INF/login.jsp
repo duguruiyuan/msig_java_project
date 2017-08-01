@@ -69,7 +69,12 @@ body {
 
 	<div class="container">
 		<div class="container">
-			<form class="form-signin">
+		
+		   <c:if test="${not empty error}">
+				<div class="alert alert-danger" role="alert">${error}</div>
+		   </c:if>
+		   
+			<form class="form-signin" action = '<c:url value="/login" />' method ='post'>
 				<h2 class="form-signin-heading">請登入</h2>
 				<label for="employeeId" class="sr-only">員工編號</label> 
 				<input placeholder="員工編號" id="employeeId" name="employeeId" class="form-control">

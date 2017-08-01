@@ -29,7 +29,7 @@ public class MyPageController extends AbstractController{
     String email = req.getParameter("email");
     String phone = req.getParameter("phone");
     String password = req.getParameter("password");
-    Employee loginUser = SecurityUtils.getLoginUser(req);  
+    Employee loginUser = SecurityUtils.getLoginUser(req).get();  
     
     EmployeeService employeeService = getBean(EmployeeService.class);
     Employee update = employeeService.update(loginUser.getId(), name, email, phone, password);

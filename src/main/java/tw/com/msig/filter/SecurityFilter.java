@@ -8,13 +8,14 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import tw.com.msig.util.SecurityUtils;
 
-//@WebFilter("/*")
+@WebFilter("/*")
 public class SecurityFilter implements Filter {
 
   @Override
@@ -28,7 +29,7 @@ public class SecurityFilter implements Filter {
     final HttpSession session = request.getSession(false);
     final String loginURI = request.getContextPath() + "/" + SecurityUtils.LOGIN_URL;
 
-    final boolean loggedIn = session != null && SecurityUtils.getLoginUser(request) != null;
+    final boolean loggedIn = session != null && SecurityUtils.getLoginUser(request).isPresent();
     final boolean loginRequest = request.getRequestURI().equals(loginURI);
 
     if (loggedIn || loginRequest) {
