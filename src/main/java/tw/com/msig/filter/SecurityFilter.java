@@ -1,30 +1,35 @@
 package tw.com.msig.filter;
 
-import tw.com.msig.util.SecurityUtils;
+import java.io.IOException;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
-@WebFilter("/*")
+import tw.com.msig.util.SecurityUtils;
+
+//@WebFilter("/*")
 public class SecurityFilter implements Filter {
 
   @Override
-  public void init(FilterConfig filterConfig) throws ServletException {}
+  public void init(final FilterConfig filterConfig) throws ServletException {}
 
   @Override
-  public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+  public void doFilter(final ServletRequest req, final ServletResponse res, final FilterChain chain)
       throws ServletException, IOException {
-    HttpServletRequest request = (HttpServletRequest) req;
-    HttpServletResponse response = (HttpServletResponse) res;
-    HttpSession session = request.getSession(false);
-    String loginURI = request.getContextPath() + "/" + SecurityUtils.LOGIN_URL;
+    final HttpServletRequest request = (HttpServletRequest) req;
+    final HttpServletResponse response = (HttpServletResponse) res;
+    final HttpSession session = request.getSession(false);
+    final String loginURI = request.getContextPath() + "/" + SecurityUtils.LOGIN_URL;
 
-    boolean loggedIn = session != null && SecurityUtils.getLoginUser(request) != null;
-    boolean loginRequest = request.getRequestURI().equals(loginURI);
+    final boolean loggedIn = session != null && SecurityUtils.getLoginUser(request) != null;
+    final boolean loginRequest = request.getRequestURI().equals(loginURI);
 
     if (loggedIn || loginRequest) {
       chain.doFilter(request, response);
