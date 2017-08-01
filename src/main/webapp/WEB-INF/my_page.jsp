@@ -78,7 +78,7 @@
 				<div class="form-group">
 					<label for="employeeId" class="control-label col-xs-2 col-sm-2"> 員工編號 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="employeeId" id="employeeId" />
+						<input type="text" class="form-control" name="employeeId" id="employeeId" disabled/>
 				    </div>
 				
 					<label for="name" class="control-label col-xs-2 col-sm-2"> 姓名 </label> 
@@ -91,7 +91,7 @@
 	
 					<label for="departmentId" class="control-label col-xs-2 col-sm-2"> 部門 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="departmentId" id="departmentId" />			
+						<input type="text" class="form-control" name="departmentId" id="departmentId" disabled/>			
 	                </div>
 	                
 					<label for="email" class="control-label col-xs-2 col-sm-2"> email </label> 
@@ -108,7 +108,7 @@
 					</div>
 					<label for="hireDate" class="control-label col-xs-2 col-sm-2"> 到職日 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="hireDate" id="hireDate" />
+						<input type="text" class="form-control" name="hireDate" id="hireDate" disabled/>
 					</div>
 				</div>
 				
@@ -116,11 +116,11 @@
 	
 					<label for="jobId" class="control-label col-xs-2 col-sm-2"> 職別 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="jobId" id="jobId" />
+						<input type="text" class="form-control" name="jobId" id="jobId" disabled/>
                     </div>
 					<label for="managerId" class="control-label col-xs-2 col-sm-2"> 主管 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="managerId" id="managerId" />
+						<input type="text" class="form-control" name="managerId" id="managerId" disabled/>
 					</div>
 				</div>
 				
@@ -134,7 +134,6 @@
 				<nav>
 				  <ul class="pager">
 				    <li><button id="saveBtn" class="btn btn-default">存檔</button></li>
-				    <li><button class="btn btn-default">返回</button></li>
 				  </ul> 
 				</nav>	
 				 
