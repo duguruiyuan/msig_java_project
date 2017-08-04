@@ -28,11 +28,13 @@ public class SecurityFilter implements Filter {
     final HttpServletResponse response = (HttpServletResponse) res;
     final HttpSession session = request.getSession(false);
     final String loginURI = request.getContextPath() + "/" + SecurityUtils.LOGIN_URL;
-
+    final String resourcesURI = request.getContextPath() + "/" + SecurityUtils.RESOURCES_URL;
+    
     final boolean loggedIn = session != null && SecurityUtils.getLoginUser(request).isPresent();
     final boolean loginRequest = request.getRequestURI().equals(loginURI);
-
-    if (loggedIn || loginRequest) {
+    final boolean resourcesRequest = request.getRequestURI().equals(resourcesURI);
+    
+    if (loggedIn || loginRequest || resourcesRequest) {
       chain.doFilter(request, response);
     } else {
       response.sendRedirect(loginURI);
