@@ -78,12 +78,12 @@
 				<div class="form-group">
 					<label for="employeeId" class="control-label col-xs-2 col-sm-2"> 員工編號 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="employeeId" id="employeeId" disabled/>
+						<input type="text" class="form-control" name="employeeId" id="employeeId" disabled value="${emp.employeeId}"/>
 				    </div>
 				
 					<label for="name" class="control-label col-xs-2 col-sm-2"> 姓名 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="name" id="name" />
+						<input type="text" class="form-control" name="name" id="name" value="${emp.name}"/>
 				    </div>		
 				</div>
 				
@@ -91,12 +91,12 @@
 	
 					<label for="departmentId" class="control-label col-xs-2 col-sm-2"> 部門 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="departmentId" id="departmentId" disabled/>			
+						<input type="text" class="form-control" name="departmentId" id="departmentId" disabled value="${emp.departmentId}"/>			
 	                </div>
 	                
 					<label for="email" class="control-label col-xs-2 col-sm-2"> e-mail </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="email" class="form-control" name="email" id="email" />
+						<input type="email" class="form-control" name="email" id="email" value="${emp.email}" />
 					</div>
 				</div>
 				
@@ -104,11 +104,11 @@
 	
 					<label for="phoneNumber" class="control-label col-xs-2 col-sm-2"> 電話號碼 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="phoneNumber" id="phoneNumber" />
+						<input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="${emp.phoneNumber}"/>
 					</div>
 					<label for="hireDate" class="control-label col-xs-2 col-sm-2"> 到職日 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="hireDate" id="hireDate" disabled/>
+						<input type="text" class="form-control" name="hireDate" id="hireDate" disabled value="${emp.hireDate}"/>
 					</div>
 				</div>
 				
@@ -116,11 +116,11 @@
 	
 					<label for="jobId" class="control-label col-xs-2 col-sm-2"> 職別 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="jobId" id="jobId" disabled/>
+						<input type="text" class="form-control" name="jobId" id="jobId" disabled value="${emp.jobId}"/>
                     </div>
 					<label for="managerId" class="control-label col-xs-2 col-sm-2"> 主管 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="managerId" id="managerId" disabled/>
+						<input type="text" class="form-control" name="managerId" id="managerId" disabled value="${emp.managerId}"/>
 					</div>
 				</div>
 				
@@ -128,7 +128,7 @@
 	
 					<label for="password" class="control-label col-xs-2 col-sm-2"> 密碼 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="password" class="form-control" name="password" id="password" />
+						<input type="password" class="form-control" name="password" id="password" value="${emp.password}"/>
 					</div>
 				</div>
 				<nav>

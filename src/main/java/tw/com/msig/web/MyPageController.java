@@ -19,6 +19,10 @@ public class MyPageController extends AbstractController{
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	  EmployeeService employeeService = getBean(EmployeeService.class);
+	  Employee loginUser = SecurityUtils.getLoginUser(req).get();  
+	  Employee emp = employeeService.getOne(loginUser.getId());
+	  req.setAttribute("emp", emp);
       forward(req, resp, "my_page");
   }
 
