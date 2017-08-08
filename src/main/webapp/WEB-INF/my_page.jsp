@@ -40,11 +40,11 @@
 							aria-expanded="false" aria-controls="navbar">
 							<span class="sr-only">Toggle navigation</span>
 						</button>
-						<a class="navbar-brand" href="#">請假系統</a>
+						<a class="navbar-brand" href="<c:url value='/my_page' />">請假系統</a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">我的資料</a></li>
+							<li class="active"><a href="<c:url value='/my_page' />">我的資料</a></li>
 						</ul>
 						<%-- 
               	這邊增加更多的 menu

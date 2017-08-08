@@ -44,7 +44,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">申請假單</a></li>
+                <li class="active"><a href="<c:url value='/new_leave' />">申請假單</a></li>
               </ul>
               <%-- 
               	這邊增加更多的 menu
