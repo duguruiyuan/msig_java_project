@@ -1,0 +1,21 @@
+REM INSERTING into MY_ATTRIBUTE
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','1','疭ヰ');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','2','ㄆ安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','3','そ安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','4','そ端痜安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','5','そ');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','6','干ゼ');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','7','玻安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','8','抄玻安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','9','盉安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','10','玻浪安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','11','ネ瞶安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','12','炊硄端痜安');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','13','玻安1摸');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','14','玻安2摸');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','15','玻安3摸');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','16','赤安1摸');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','17','赤安2摸');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('安','18','赤安3摸');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('场','001401','戈癟场╰参秨祇舱');
+Insert into MY_ATTRIBUTE (ATT_TYPE,ATT_VALUE,ATT_COMM) values ('场','001407','戈癟场╰参蝴笲舱');
