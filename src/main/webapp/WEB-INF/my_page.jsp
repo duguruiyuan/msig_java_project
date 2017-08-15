@@ -104,7 +104,7 @@
 	
 					<label for="phoneNumber" class="control-label col-xs-2 col-sm-2"> 電話號碼 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="${emp.phoneNumber}"/>
+						<input type="text" class="form-control" name="phone" id="phone" value="${emp.phoneNumber}"/>
 					</div>
 					<label for="hireDate" class="control-label col-xs-2 col-sm-2"> 到職日 </label> 
 					<div class="col-xs-4 col-sm-4">

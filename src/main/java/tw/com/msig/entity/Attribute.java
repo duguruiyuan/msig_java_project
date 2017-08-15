@@ -1,42 +1,41 @@
 package tw.com.msig.entity;
 
-public class Attribute {
+import java.io.Serializable;
 
-	private long id;
+public class Attribute implements Serializable {
+
 	private String attType;// "leaveType"
 	private String attValue;
 	private String attComm;
 
-	public long getId() {
-		return id;
+	@Override
+	public String toString() {
+		return "Attribute [attType=" + attType + ", attValue=" + attValue + ", attComm=" + attComm + "]";
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getattType() {
+	public String getAttType() {
 		return attType;
 	}
 
-	public void setattType(String attType) {
+	public void setAttType(String attType) {
 		this.attType = attType;
 	}
 
-	public String getattValue() {
+	public String getAttValue() {
 		return attValue;
 	}
 
-	public void setattValue(String attValue) {
+	public void setAttValue(String attValue) {
 		this.attValue = attValue;
 	}
 
-	public String getattComm() {
+	public String getAttComm() {
 		return attComm;
 	}
 
-	public void setattComm(String attComm) {
+	public void setAttComm(String attComm) {
 		this.attComm = attComm;
 	}
+
 
 }

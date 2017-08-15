@@ -5,13 +5,11 @@
 
 <hibernate-mapping>
 	<class name="tw.com.msig.entity.Attribute" table="my_attribute">
-		<id name="id" column="id" type="long">
-			<generator class="sequence" />
-		</id>
-
-		<property name="attType" column="att_type" type="string" />
-		<property name="attValue" column="att_value" type="string" />
+		<composite-id>
+			<key-property name="attType" column="att_type" type="string" ></key-property>
+			<key-property name="attValue" column="att_value" type="string" ></key-property>
+		</composite-id>
+		
 		<property name="attComm" column="att_comm" type="string" />
-
 	</class>
 </hibernate-mapping>

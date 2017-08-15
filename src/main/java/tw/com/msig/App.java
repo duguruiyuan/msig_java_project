@@ -1,6 +1,7 @@
 package tw.com.msig;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import tw.com.msig.dao.AttributeDao;
+import tw.com.msig.entity.Attribute;
 import tw.com.msig.entity.Employee;
 import tw.com.msig.service.AttributeService;
 import tw.com.msig.service.EmployeeService;
@@ -42,7 +44,12 @@ public class App implements WebApplicationInitializer {
     // System.setProperty("spring.profiles.active", "h2");
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml",
         "spring-service.xml", "spring-dao.xml");
-
+    EmployeeService employeeService= context.getBean(EmployeeService.class);
+    List<Employee> all = employeeService.getAll();
+    all.forEach(System.out::println);
+    AttributeService AttributeService = context.getBean(AttributeService.class);
+    List<Attribute> all2 = AttributeService.getAll();
+    all2.forEach(System.out::println);
     // 1.做完假資料
     // 2.把所有 servelt 要得 method 準備好 get post ...
     

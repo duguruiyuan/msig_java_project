@@ -74,14 +74,15 @@
 				<div class="form-group">
 					<label for="employeeId" class="control-label col-xs-2 col-sm-2"> 員工編號 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="employeeId" id="employeeId" disabled/>
+						<input type="text" class="form-control" value="${emp.employeeId}" name="employeeId" id="employeeId" disabled/>
 				    </div>
 				    
 					<label for="leave_type" class="control-label col-xs-2 col-sm-2"> 假別 </label> 
 					<div class="col-xs-4 col-sm-4">
-						
 			            <select class="form-control" name="leave_type" id="leave_type">
-                            <option value="">特休</option>
+                            <c:forEach var="type" items="${leaveTypes}">
+                            	<option value="${type.attValue}">${type.attComm}</option>
+                            </c:forEach>
                         </select>
 				    </div>
 				</div>
@@ -89,19 +90,19 @@
 				<div class="form-group">
 					<label for="start_time" class="control-label col-xs-2 col-sm-2"> 請假起日 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="date" class="form-control" name="start_time" id="start_time" />
+						<input type="datetime-local" class="form-control" name="start_time" id="start_time" />
 				    </div>	
 				    	
 					<label for="end_time" class="control-label col-xs-2 col-sm-2"> 請假迄日 </label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="date" class="form-control" name="end_time" id="end_time" />			
+						<input type="datetime-local" class="form-control" name="end_time" id="end_time" />			
 	                </div>
 				</div>
 				
 				<div class="form-group">
-					<label for="agent" class="control-label col-xs-2 col-sm-2"> 代理人 </label> 
+					<label for="agent" class="control-label col-xs-2 col-sm-2">代理人</label> 
 					<div class="col-xs-4 col-sm-4">
-						<input type="text" class="form-control" name="agent" id="agent" />
+						<input type="text" class="form-control" value="${emp.managerId}" name="agent" id="agent" />
 					</div>
 				</div>
 				
@@ -136,6 +137,8 @@
 
 <script type="text/javascript">
 	$(function() {
+		console.log("${leaveTypes}");
+		
 		$("#logoutLink").click(function() {
 			$('#logoutForm').submit();
 		});

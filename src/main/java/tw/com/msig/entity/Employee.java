@@ -15,17 +15,21 @@ public class Employee {
 	private String jobId;
 	private String managerId;
 	private String password;
-
+	private Set<Leave> leaves;
 	
-
-  private Set<Item> securitys;
-	private Set<Item> leaves;
-
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", employeeId=" + employeeId + ", name=" + name + ", departmentId=" + departmentId
 				+ ", email=" + email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", jobId=" + jobId
-				+ ", managerId=" + managerId + ", securitys=" + securitys + ", leaves=" + leaves + "]";
+				+ ", managerId=" + managerId + ", password=" + password + "]";
+	}
+
+	public Set<Leave> getLeaves() {
+		return leaves;
+	}
+
+	public void setLeaves(Set<Leave> leaves) {
+		this.leaves = leaves;
 	}
 
 	public long getId() {
@@ -100,22 +104,6 @@ public class Employee {
 		this.managerId = managerId;
 	}
 
-	public Set<Item> getSecuritys() {
-		return securitys;
-	}
-
-	public void setSecuritys(Set<Item> securitys) {
-		this.securitys = securitys;
-	}
-
-	public Set<Item> getLeaves() {
-		return leaves;
-	}
-
-	public void setLeaves(Set<Item> leaves) {
-		this.leaves = leaves;
-	}
-	
 	public String getPassword() {
 	    return password;
 	  }

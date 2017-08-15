@@ -27,8 +27,9 @@ public class MyPageController extends AbstractController{
   }
 
   @Override
-  protected void doPut(HttpServletRequest req, HttpServletResponse resp)
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
+	req.setCharacterEncoding("UTF-8");
     String name = req.getParameter("name");     
     String email = req.getParameter("email");
     String phone = req.getParameter("phone");
@@ -38,7 +39,7 @@ public class MyPageController extends AbstractController{
     EmployeeService employeeService = getBean(EmployeeService.class);
     Employee update = employeeService.update(loginUser.getId(), name, email, phone, password);
     SecurityUtils.setLoginUser(req, update);
-    
+    req.setAttribute("emp", update);
     forward(req, resp, "my_page");
     
   }
