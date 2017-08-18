@@ -28,7 +28,7 @@ public class Employee {
 		return leaves;
 	}
 
-	public void setLeaves(Set<Leave> leaves) {
+	public void setLeaves(final Set<Leave> leaves) {
 		this.leaves = leaves;
 	}
 
@@ -36,7 +36,7 @@ public class Employee {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(final long id) {
 		this.id = id;
 	}
 
@@ -44,7 +44,7 @@ public class Employee {
 		return employeeId;
 	}
 
-	public void setEmployeeId(String employeeId) {
+	public void setEmployeeId(final String employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -52,7 +52,7 @@ public class Employee {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 
@@ -60,7 +60,7 @@ public class Employee {
 		return departmentId;
 	}
 
-	public void setDepartmentId(String departmentId) {
+	public void setDepartmentId(final String departmentId) {
 		this.departmentId = departmentId;
 	}
 
@@ -68,7 +68,7 @@ public class Employee {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -76,7 +76,7 @@ public class Employee {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(final String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -84,7 +84,7 @@ public class Employee {
 		return hireDate;
 	}
 
-	public void setHireDate(LocalDateTime hireDate) {
+	public void setHireDate(final LocalDateTime hireDate) {
 		this.hireDate = hireDate;
 	}
 
@@ -92,7 +92,7 @@ public class Employee {
 		return jobId;
 	}
 
-	public void setJobId(String jobId) {
+	public void setJobId(final String jobId) {
 		this.jobId = jobId;
 	}
 
@@ -100,7 +100,7 @@ public class Employee {
 		return managerId;
 	}
 
-	public void setManagerId(String managerId) {
+	public void setManagerId(final String managerId) {
 		this.managerId = managerId;
 	}
 
@@ -108,7 +108,7 @@ public class Employee {
 	    return password;
 	  }
 
-	  public void setPassword(String password) {
+	  public void setPassword(final String password) {
 	    this.password = password;
 	  }
 

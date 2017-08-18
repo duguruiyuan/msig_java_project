@@ -1,31 +1,26 @@
 package tw.com.msig;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.ConfigurableWebEnvironment;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
-import tw.com.msig.dao.AttributeDao;
-import tw.com.msig.entity.Attribute;
 import tw.com.msig.entity.Employee;
-import tw.com.msig.service.AttributeService;
+import tw.com.msig.entity.Leave;
 import tw.com.msig.service.EmployeeService;
 
 /** @author Matt S.Y Ho */
 public class App implements WebApplicationInitializer {
 
   @Override
-  public void onStartup(ServletContext servletContext) throws ServletException {
-    XmlWebApplicationContext context = new XmlWebApplicationContext();
+  public void onStartup(final ServletContext servletContext) throws ServletException {
+    final XmlWebApplicationContext context = new XmlWebApplicationContext();
     context.setConfigLocations("classpath:spring-config.xml", "classpath:spring-service.xml",
         "classpath:spring-dao.xml");
     context.setServletContext(servletContext);
@@ -40,23 +35,31 @@ public class App implements WebApplicationInitializer {
   // ctrl + sfhit + t : 找 class
   // ctrl + sfhit + r : 找 resource
 
-  public static void main(String... args) {
+  public static void main(final String... args) {
     // System.setProperty("spring.profiles.active", "h2");
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml",
-        "spring-service.xml", "spring-dao.xml");
-    EmployeeService employeeService= context.getBean(EmployeeService.class);
-    List<Employee> all = employeeService.getAll();
-    all.forEach(System.out::println);
-    AttributeService AttributeService = context.getBean(AttributeService.class);
-    List<Attribute> all2 = AttributeService.getAll();
-    all2.forEach(System.out::println);
-    // 1.做完假資料
-    // 2.把所有 servelt 要得 method 準備好 get post ...
+    final ClassPathXmlApplicationContext context = 
+        new ClassPathXmlApplicationContext("spring-config.xml", "spring-service.xml", "spring-dao.xml");
     
     try {
-      // PolicyService service = context.getBean(PolicyService.class);
-      // PolicyDao dao = context.getBean(PolicyDao.class);
 
+      final EmployeeService employeeService = context.getBean(EmployeeService.class);
+
+      final Leave leave = new Leave();
+      leave.setAgent("1");
+      final Set<Leave> arrayList = new HashSet<Leave>();
+      arrayList.add(leave);
+      // 第一名員工
+      final Employee employee = new Employee();
+      employee.setEmail("test");
+      employee.setId(1L);
+      employee.setName("test");
+      employee.setLeaves(arrayList);
+
+      // 儲存 並印出
+      employeeService.save(employee);
+      employeeService.getAll().forEach(System.out::println);
+      System.out.println("假單: " + employeeService.getOne(employee.getId()).getLeaves());
+      
     } finally {
       context.close();
     }
