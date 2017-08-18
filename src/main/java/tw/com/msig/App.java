@@ -36,7 +36,6 @@ public class App implements WebApplicationInitializer {
   // ctrl + sfhit + r : 找 resource
 
   public static void main(final String... args) {
-    // System.setProperty("spring.profiles.active", "h2");
     final ClassPathXmlApplicationContext context = 
         new ClassPathXmlApplicationContext("spring-config.xml", "spring-service.xml", "spring-dao.xml");
     
